@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Python en el mundo real</title>
+
+  <link rel="stylesheet" href="reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="css/personal-theme.css">
+  <link rel="stylesheet" href="css/qt.css">
+  <link rel="stylesheet" href="css/extras.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+  <!-- Printing and PDF exports -->
+  <script>
+  if( window.location.search.match( /print-pdf/gi ) ) {
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'reveal.js/css/print/pdf.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  }
+  </script>
+</head>
+<!-- CONTENT -->
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section data-transition="fade-in fade-out" data-background-image="img/16.png">
+  <div id="left70">
+    <h3>Python en el mundo real: de la teoría a la práctica</h3>
+    <hr class="qt-line"/>
+  <p class="x80">
+    Dr. <i class="qt-lemon">Cristián</i> Maureira-Fredes<br>
+    <p style="font-size: 40%;">
+    Principal R&amp;D Manager at The Qt Company<br>
+    Vice Chair Elect at Python Software Foundation
+    </p>
+    <span class="qt-neon">@cmaureir</span><br/>
+    <img class="clean-img" src="img/mastodon.png">
+    <img class="clean-img" src="img/github_white.png">
+    <img class="clean-img" src="img/linkedin.png">
+    <img class="clean-img" src="img/bluesky.png">
+  </p>
+  </div>
+</section>
+
+<section data-transition="fade-in fade-out" data-auto-animate>
+  <div class="r-hstack justify-center">
+      <div><img style="width: 500px;" src="img/career_1.png"/></div>
+      <div><img class="fragment" style="width: 500px;" src="img/career_2.png"/></div>
+      <div><img class="fragment" style="width: 500px;" src="img/career_3.png"/></div>
+  </div>
+</section>
+
+<section data-auto-animate data-auto-animate="cubic-bezier(0.77, 0, 0.175, 1.0)">
+  <img data-id="logo1"  data-auto-animate-delay="0.0" style="margin: 10px; width: 200px;"  src="img/psf.png" />
+  <img data-id="logo2"  data-auto-animate-delay="0.3" style="margin: 10px; width: 200px;"  src="img/eps.png" />
+  <img data-id="logo3"  data-auto-animate-delay="0.6" style="margin: 10px; width: 200px;" src="img/pyladiescon.png" />
+  <img data-id="logo4"  data-auto-animate-delay="0.9" style="margin: 10px; width: 200px;"  src="img/pycon_charlas.png" />
+  <img data-id="logo5"  data-auto-animate-delay="1.2" style="margin: 10px; width: 200px;"  src="img/hablemos_python.png" />
+  <img data-id="logo6"  data-auto-animate-delay="1.5" style="margin: 10px; width: 200px;"  src="img/pypi.png" />
+  <img data-id="logo7"  data-auto-animate-delay="1.8" style="margin: 10px; width: 200px;"  src="img/python_docs_es.png" />
+  <img data-id="logo8"  data-auto-animate-delay="2.1" style="margin: 10px; width: 200px;" src="img/pyladies_berlin.png" />
+  <img data-id="logo9"  data-auto-animate-delay="2.4" style="margin: 10px; width: 200px;"  src="img/python_pizza.png" />
+  <img data-id="logo10" data-auto-animate-delay="2.7" style="margin: 10px; width: 220px;"  src="img/python_chile.png" />
+  <img data-id="logo11" data-auto-animate-delay="3.0" style="margin: 10px; width: 220px;"  src="img/python_spain.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h1 class="r-fit-text">Python en Números</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Stackoverflow Survey</h2>
+    <p style="font-width: 80%;">Most popular technologies 2025 (<a
+                                               href="https://survey.stackoverflow.co/2025/technology#most-popular-technologies">link</a>)</p>
+    <img src="img/stackoverflowsurvey2025_popular.png" style="width: 80%"/>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Jetbrains Survey</h2>
+    <p style="font-size: 80%;">The state of Python 2025 by Jetbrains (<a
+        href="https://blog.jetbrains.com/pycharm/2025/08/the-state-of-python-2025/">link</a>)</p>
+    <div id="left">
+        <img src="img/jetbrains2025_1.png" />
+    </div>
+    <div id="right">
+        <img src="img/jetbrains2025_2.png" />
+    </div>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+  <h2>Github's Octoverse 2025</h2>
+  <p style="font-size: 80%;">Top 10 programming languages on Github 2025 (<a
+     href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/">link</a>)</p>
+    <img src="img/octoverse2025.webp" style="width: 80%;"/>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+  <h2>TIOBE index</h2>
+  <p style="font-size: 80%;">March 2026 (<a
+     href="https://www.tiobe.com/tiobe-index/">link</a>)</p>
+  <img style="width: 80%;" src="img/tiobe_april_2026.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>PyPI in 2025</h2>
+    <p style="font-size: 80%;">A year in review (<a
+       href="https://blog.pypi.org/posts/2025-12-31-pypi-2025-in-review/">link</a>)</p>
+    <ul style="font-size: 80%;">
+      <li>Más de 3.9 millones de nuevos archivos publicados</li>
+      <li>Más de 130,000 nuevos proyectos creados</li>
+      <li>1.92 exabytes de data transferida
+          <ul style="font-size: 60%;">
+              <li>1 petabyte = 1 000 000 000 000 000 bytes</li>
+          </ul>
+      </li>
+      <li>2.56 trillones de peticiones</li>
+      <li>81,000 peticiones por segundo en promedio</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/14.png">
+  <h1 class="r-fit-text">¿Qué ayudó a la</h1>
+  <h1 class="r-fit-text"><i class="qt-lemon">popularidad</i> actual?</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/plot_sin.png">
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/plot_con.png">
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h1 class="r-fit-text">Pero...</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+    <h1 class="r-fit-text">Python <i class="red">vs</i> otros lenguajes</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h3>¿Cuántos lenguajes de programación hay?</h3>
+  <h3>🤔</h3>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-video="videos/programming_languages.mp4" data-background-video-loop data-background-video-muted>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h3>Los lenguajes evolucionan y se inspiran 🐍</h3>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+<pre style="font-size: 65%; width: 90%;"><code class="python" data-trim data-noescape>
+HOW TO PRINT CELSIUS FROM a TO b:
+  PUT a, b IN lo, hi
+  IF lo &gt; hi:
+    PUT hi, lo IN lo, hi \Swap hi and lo
+  FOR f IN {lo..hi}:
+    PUT (f-32)*5/9 IN c
+    WRITE f, "Fahrenheit =", 2 round c, "Celsius" /
+</code></pre>
+<p class="fragment">ABC, Predecesor de Python</p>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/15.png">
+  <img src="img/abc.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+  <h3>Nuestro lenguaje 🇨🇱</h3>
+  <div id="left">
+  <ul>
+    <li class="fragment">"Cachar"
+      <ul style="font-size: 80%;">
+        <li><i class="qt-lemon">to catch</i> (Inglés)</li>
+      </ul>
+    </li>
+    <li class="fragment">"Guagua"
+      <ul style="font-size: 80%;">
+        <li><i class="qt-lemon">wawa</i> (Quechua/Aymara)</li>
+      </ul>
+    </li>
+    <li class="fragment">"Polola"
+      <ul style="font-size: 80%;">
+        <li><i class="qt-mandarin">piulliu</i> (Mapuzugun)</li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+  <div id="lright">
+  <ul>
+    <li class="fragment">"Pichintún"
+      <ul style="font-size: 80%;">
+        <li><i class="qt-mandarin">püchintun</i> (Mapuzugun)</li>
+      </ul>
+    </li>
+    <li class="fragment">"Guata"
+      <ul style="font-size: 80%;">
+        <li><i class="qt-mandarin">huata</i> (Mapuzugun)</li>
+      </ul>
+    </li>
+    <li class="fragment">"Cahuín"
+      <ul style="font-size: 80%;">
+        <li><i class="qt-mandarin">kawiñ</i> (Mapuzugun)</li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h3>¿Se pueden comparar los lenguages de programación?</h3>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2 class="r-fit-text"><i class="red">¡Python es lento!</i></h2>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2 class="r-fit-text">¿Es Python lento?</h2>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h1 class="r-fit-text">¿Cuál Python?</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/interpretes.png">
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+  <h3>⭐¿Tienes Interés en detalles de CPython?</h3>
+  El repo: <a href="https://github.com/python/cpython">github.com/python/cpython</a><br/>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+  <h3>Construyendo tu propio <i class="pylatam-yellow">Python</i></h3>
+  <ul style="font-size: 80%;">
+    <li class="fragment">Clona el repositorio
+  <pre class="fragment fade-in" data-fragment-index="1"style="font-size: 60%;width: 90%;"><code class="bash" data-trim data-noescape>
+  git clone https://github.com/python/cpython.git
+  </code></pre></li>
+    <li class="fragment">Configúralo
+  <pre class="fragment fade-in" data-fragment-index="1"style="font-size: 60%;width: 90%;"><code class="bash" data-trim data-noescape>
+  # puedes seleccionar un directorio para construir e instalar
+  cd cpython/
+  ./configure
+  </code></pre>
+    </li>
+    <li class="fragment">Compílalo, y disfruta!
+  <pre class="fragment fade-in" data-fragment-index="1"style="font-size: 60%;width: 90%;"><code class="bash" data-trim data-noescape>
+  # Para utilizar 'X' procesos
+  make -j X
+  # ...
+  ./python
+  Python 3.11.0a0 (Aug 27 2021, 22:56:41) [GCC 11.1.0] on linux
+  Type "help", "copyright", "credits" or "license" for more information.
+  >>> print("Hola, Mundo!")
+  "Hola, Mundo!"
+  </code></pre>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Entonces...¿Es Lento?</h2>
+    <ul style="font-size: 80%;">
+        <li>«Tomar sopa con un tenedor»</li>
+        <li class="fragment" >Optimización prematura</li>
+        <li class="fragment" >Interacción con otros lenguajes</li>
+        <li class="fragment" >El desempeño sigue mejorando con cada release</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Cambios en las nuevas versiones</h2>
+    <ul style="font-size: 80%;">
+        <li class="fragment">3.11 -  <i class="green">10-60% más rápido</i> que 3.10</li>
+        <li class="fragment">3.12 - 📈 tokenize, asyncio, etc</li>
+        <li class="fragment">3.13 - Free threaded, experimental JIT</li>
+        <li class="fragment">3.14 - New interpreter (3-5%), JIT (10% lower to 20% faster)</li>
+        <li class="fragment">3.15 - JIT mejorando (4-7% mejor)</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>¿Qué otros lenguajes debo aprender?</h2>
+    <ul style="font-size: 80%;">
+        <li class="fragment">¡Depende!</li>
+        <li class="fragment">JavaScript/TypeScript para temas Web</li>
+        <li class="fragment">Rust para herramientas y backend</li>
+        <li class="fragment">C y C++ para compatibilidad con sistemas emebedded
+        o frameworks complejos</li>
+        <li class="fragment">Zig o Gleam, si tienes tiempo libre</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2 class="r-fit-text">Interacción con otros lenguajes</h2>
+    <h2 class="r-fit-text">(Language Bindings)</h2>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/15.png">
+  <h2>NumPy</h2>
+  <img src="img/languages_numpy.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/15.png">
+  <h2>Pandas</h2>
+  <img src="img/languages_pandas.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/15.png">
+  <h2>Scikit-Learn</h2>
+  <img src="img/languages_scikit_learn.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/15.png">
+  <h2>Tensorflow</h2>
+  <img src="img/languages_tensorflow.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/15.png">
+  <h2>PyTorch</h2>
+  <img src="img/languages_pytorch.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/15.png">
+  <h2>Ruff</h2>
+  <img src="img/languages_ruff.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/15.png">
+    <h1>Este tema es bastante extenso</h1>
+    <p><a href="https://maureira.dev/speaking/">maureira.dev/speaking</a></li>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+    <h1 class="r-fit-text">Python en el mundo laboral</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Tipos de perfiles</h2>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    * Certificaciones vs Carreras universitarias
+        * Diferences background
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h1 class="r-fit-text">Empresas que usan Python</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+    <h2>En Chile (1/2)</h2>
+    <ul style="font-width: 80%;">
+      <li>🌱 NotCo - una IA propietaria (Giuseppe)</li>
+      <li>🛒 Cornershop - Soluciones para manipular datos, obtenerlos, etc (Python/Django)</li>
+      <li>💰 Fintual - manejo de portafolios de inversiones algoritmicamente (Python/Django/DS)</li>
+      <li>👥 Buk - plataforma HR (Data/Automation)</li>
+      <li>🏠 Houm - corredora de propiedades (Python/DS)</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+    <h2>En Chile (2/2)</h2>
+Chile emerged as the AI leader in the Latin American Artificial Intelligence Index Alcor, and Chilean software engineers rank 12th globally in tech skills and 39th in data science — with Python among their most popular programming languages. Alcor
+The pattern in Chile mirrors the rest of LatAm: Python dominates the ML/data layer. But NotCo is truly unique globally — it's one of the very few companies anywhere that uses ML not just to optimize a product, but as the literal product itself, designing food at a molecular level with an AI trained on hundreds of thousands of plant compounds.
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+    <h2>En Latinoamérica (1/2)</h2>
+    <ul style="font-width: 80%;">
+        <li>🛒 MercadoLibre / MercadoPago (Argentina) - Mayoritariamente herramientas, APIs y DS</li>
+        <li>💜 Nubank (Brazil) - Combinación con Clojure, ML/DS </li>
+        <li>🍔 iFood (Brazil) - infrastructura de ML, PySpark ETL pipelines.</li>
+        <li>🌍 Globo / Globoplay (Brazil) - plataforma de streaming (DS).</li>
+        <li>🚀 Rappi (Colombia) - división de DS, MLOps y herramientas</li>
+        <li>✈️ Despegar (Argentina) - DS y algunos servicios de backend</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h2>En Latinoamérica (2/2)</h2>
+Notable pattern across LatAm companies: The region mirrors global trends — Python dominates the ML/data science layer even when core backend infrastructure is in Java, Go, or (in Nubank's unique case) Clojure. iFood and Rappi are the most publicly documented cases, with iFood having particularly detailed engineering content about their ML platform. Nubank is the most fascinating because they've openly blogged about the friction of having Python ML models in a Clojure-first ecosystem, which is a rare honest take on polyglot production challenges.
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+    <h2>En el mundo (1/3)</h2>
+    <ul style="font-width: 80%;">
+        <li>🎬 Netflix - Analisis de datos, backend, automatization, seguridad, herramientas, etc. Sistema de recomendaciones y traffic balancing.</li>
+        <li>📸 Instagram - Cinder para rendimiento, Django para el servicio web.</li>
+        <li>🎵 Spotify - backend y analisis de datos. Radio (auto-gen playlists) y Discover (recomendación de nuevo contenido)</li>
+        <li>🔍 Google - Search algorithms, youtube backend, internal systems, proyectos de IA/ML. También es parte de algunos servicios de sus servidores.</li>
+        <li>📦 Dropbox - Server y aplicación de escritorio fueron originalmente escritas en Python. Guido se unió a mejorar con verificación de tipado.</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+    <h2>En el mundo (2/3)</h2>
+    <ul style="font-width: 80%;">
+        <li>🛒 Amazon - Search algorithms. Web applications, con django y flask. DS y sistemas de escalabilidad en general.</li>
+        <li>🚗 Uber - backend y procesamiento de datos. Pyro (computación distribuida) y pipelines de ML.</li>
+        <li>💬 Reddit - Migración de List a Python hace 20 años.</li>
+        <li>🖼️ Pinterest - núcleo de la aplicación, incluyendo varias herramientas de manejo de datos y comunicación.</li>
+        <li>🤖 Meta (Facebook) - Herramientas, analisis de datos, redes, automatización, etc.</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h2>En el mundo (3/3)</h2>
+The pattern that emerges: Python tends to own the ML/recommendation layer, DevOps/automation, and data pipelines at most big companies, even when the core infrastructure uses faster compiled languages. Instagram is the notable outlier where Python is the primary language all the way through the stack.
+</section>
+
+<section data-transition="fade-in fade-out" data-auto-animate>
+  <h2>Fuera del mundo</h2>
+  <div id="left">
+      <img class="fragment" src="img/ingenuity.jpg">
+  </div>
+  <div id="right">
+      <img class="fragment" src="img/iss.jpg">
+  </div>
+</section>
+
+<section data-auto-animate data-auto-animate="cubic-bezier(0.77, 0, 0.175, 1.0)">
+    <h2>Instituciones que utilizan Python</h2>
+    <img data-id="logo1" data-auto-animate-delay="0.0" style="margin: 10px;
+                                                       width: 150px;"
+    src="img/nasa.png" />
+    <img data-id="logo3" data-auto-animate-delay="0.3" style="margin: 10px;
+                                                       width:
+                                                       200px;background-color:
+                                                       white;"
+    src="img/esa.png"/>
+    <img data-id="logo4" data-auto-animate-delay="0.6" style="margin: 10px; width: 200px;"
+    src="img/cern.png" />
+    <img data-id="logo5" data-auto-animate-delay="0.8" style="margin: 10px; width: 200px;"
+    src="img/who.png" />
+    <img data-id="logo6" data-auto-animate-delay="1.2" style="margin: 10px;
+                                                       width: 100px;"
+    src="img/alma.jpg" />
+</section>
+
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h1 class="r-fit-text">¿Qué aprender con Python?*</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Áreas de interés</h2>
+    <ul style="width: 80%;">
+        <li class="fragment">Ciencia y Analisis de datos</li>
+        <li class="fragment">Desarrollo e integración web</li>
+        <li class="fragment">Creación de herramientas línea de comando e
+            interfaces gráficas</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Módulos populares - DS/DA</h2>
+    <h3>Numpy, PyTorch, Tensorflow</h3>
+
+  <div class="r-hstack justify-center">
+      <div><img style="width: 200px;" src="img/numpy.svg"/></div>
+      <div><img style="width: 300px;" src="img/pytorch.svg"/></div>
+      <div><img style="width: 200px;" src="img/tensorflow.png"/></div>
+  </div>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Módulos populares - Web</h2>
+    <h3>Flask, Django, FastAPI</h3>
+
+      <img src="img/flask.svg" />
+      <img src="img/django.png" />
+      <img src="img/fastapi.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Módulos populares - Tools/UI</h2>
+    <h3>Astral, BeeWare, Qt</h3>
+        <img src="img/astral2.jpg" />
+        <img src="img/brutus.png" />
+        <img src="img/qt_white.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h1 class="r-fit-text">Python y su comunidad</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    * El rol de la PSF
+    * Iniciativas mundiales
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Conferencias Internacionales (1/2)</h2>
+    <h3><i class="yellow">Py</i>thon <i class="yellow">Con</i>ference (PyCon) -
+        <a href="https://pycon.org">pycon.org</a></h3>
+    <img style="width: 80%;" src="img/pycon.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Conferencias Internacionales (2/2)</h2>
+    <h3>Micro Conference - <a href="https://python.pizza">python.pizza</a></h3>
+    <img style="width: 80%;" src="img/python_pizza_events.png" />
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Python Chile - <a href="https://pythonchile.cl">pythonchile.cl</a></h2>
+    <ul style="font-size: 80%;">
+        <li>Comunidad chilena oficial</li>
+        <li>Eventos nacionales y regionales
+            <ul>
+                <li>PyDay Santiago - 6 de Junio (Inacap Santiago Centro)</li>
+                <li>PyCon Chile - 7 de Noviembre (por confirmar)</li>
+                <li>Más eventos aún no confirmadas</li>
+                <li><a href="https://pyday.cl">pyday.cl</a> y <a
+                       href="https://pycon.cl">pycon.cl</a></li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/17.png">
+    <h2>Python en Español - <a
+            href="https://hablemospython.dev">hablemospython.dev</a></h2>
+    <ul style="font-size: 80%;">
+        <li>Comunidad internacional de gente hispanoparlante</li>
+        <li>Servidor Discord muy activo</li>
+        <li>Eventos online y anuncios de actividades</li>
+    </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h1 class="r-fit-text">El purismo tecnológico</h1>
+  <h1 class="r-fit-text"><i class="red">no es</i> la realidad</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/12.png">
+  <h1 class="r-fit-text">Necesitamos interacción muchas tecnologías</h1>
+  <h1 class="r-fit-text">y Python es una muy buena solución para ello</h1>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/16.png">
+  <div id="left70">
+    <h3>Python en el mundo real: de la teoría a la práctica</h3>
+    <hr class="qt-line"/>
+  <p class="x80">
+    Dr. <i class="qt-lemon">Cristián</i> Maureira-Fredes<br>
+    <p style="font-size: 40%;">
+    Principal R&amp;D Manager at The Qt Company<br>
+    Vice Chair Elect at Python Software Foundation
+    </p>
+    <span class="qt-neon">@cmaureir</span><br/>
+    <img class="clean-img" src="img/mastodon.png">
+    <img class="clean-img" src="img/github_white.png">
+    <img class="clean-img" src="img/linkedin.png">
+    <img class="clean-img" src="img/bluesky.png">
+  </p>
+  </div>
+</section>
+
+    </div>
+  </div>
+
+  <script src="reveal.js/dist/reveal.js"></script>
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script src="reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="reveal.js/plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+  </script>
+  <!-- Hack to have a footer-->
+
+  <!-- 1. Style header/footer <div> so they are positioned as desired: in css/qt.css -->
+  <!-- 2. Create hidden header/footer <div> -->
+  <div id="hidden" style="display:none;">
+    <div id="header">
+      <div id="header-left" style="margin-top: 15px; margin-left: 20px;">
+          <img style="width: 100px;" src="img/python.svg" />
+      </div>
+      <div id="header-right"></div>
+      <div id="footer-left">
+        <p style="font-size: 14pt;margin-left: 20px;">
+          <!--<img class="clean-img" src="img/qt_white.png" />-->
+          Cristián Maureira-Fredes | <b><i class="qt-neon">@cmaureir</i></b>
+      </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    // 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+    var header = $('#header').html();
+    if ( window.location.search.match( /print-pdf/gi ) ) {
+      Reveal.addEventListener( 'ready', function( event ) {
+        $('.slide-background').append(header);
+      });
+    }
+    else {
+      $('div.reveal').append(header);
+     }
+  </script>
+</body>
+</html>
